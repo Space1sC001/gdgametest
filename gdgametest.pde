@@ -4,8 +4,14 @@ float bgX;
 float bgY = -20;
 float shakeLoop;
 PImage bg;
-//float topX = ;
+
+
  
+
+boolean grounded = true;
+
+
+
 void setup(){
   size(1000, 730);
   bg = loadImage("./images/bggd.png");
@@ -15,6 +21,18 @@ void setup(){
 void draw(){
   moveBG();
   rect(x, y, 20, 20);
+
+
+  if(keyPressed){
+    if(keyCode == UP){
+      y-=2; 
+    }
+  }
+  if(y <= 655){
+    grounded = false;
+    
+  }
+
 }
 
 void moveBG(){
@@ -43,3 +61,21 @@ void moveBG(){
   }
   
 }
+
+
+
+void keyReleased(){
+  if(keyCode == UP){
+    while(!grounded){
+      y += 2;
+    }
+    
+  }
+      
+}
+   
+     
+    
+    
+  
+
