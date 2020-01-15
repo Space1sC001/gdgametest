@@ -5,7 +5,7 @@ float bgY = -20;
 float shakeLoop;
 PImage bg;
 //float topX = ;
-
+ 
 void setup(){
   size(1000, 730);
   bg = loadImage("./images/bggd.png");
