@@ -4,16 +4,24 @@ float bgX;
 float bgY = -20;
 float shakeLoop;
 PImage bg;
+PImage coins;
+Coin[] coinArray;
 //float topX = ;
  
 void setup(){
   size(1000, 730);
   bg = loadImage("./images/bggd.png");
   smooth();
+  coins = loadImage("./images/coin.png");
+  coinArray = new Coin[10];
+  for(int i=0;i<coinArray.length; i++){
+    coinArray[i]=new Coin(700,400);
+  }
 }
 
 void draw(){
   moveBG();
+  moveCoins(); 
   rect(x, y, 20, 20);
 }
 
@@ -42,4 +50,11 @@ void moveBG(){
     
   }
   
+}
+
+void moveCoins(){
+
+  for(int i=0; i<coinArray.length;i++){
+   coinArray[i].moveCoin(); 
+  }
 }
