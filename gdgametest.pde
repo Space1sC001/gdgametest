@@ -5,6 +5,7 @@ float bgY = -20;
 float shakeLoop;
 PImage bg;
 PImage coins;
+public int score;
 Coin[] coinArray;
 //float topX = ;
  
@@ -17,12 +18,28 @@ void setup(){
   for(int i=0;i<coinArray.length; i++){
     coinArray[i]=new Coin(700,400);
   }
+  score=0;
+  
+  
 }
 
 void draw(){
   moveBG();
   moveCoins(); 
   rect(x, y, 20, 20);
+  textSize(32);
+  text("Score: " + score, 100, 50);
+  for(Coin : coinArray){                                              //foreach loop (instead of a for loop) to go through each item in an array
+    
+    //for(Coin b2: coinArray){                                            //check each ball against every other ball
+      
+      if(b1!=b2){
+        b1.ballCollision(b2);
+      }
+      
+    }
+    
+  }
 }
 
 void moveBG(){
