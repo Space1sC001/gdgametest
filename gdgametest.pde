@@ -8,7 +8,14 @@ PImage coins;
 public int score;
 Coin[] coinArray;
 //float topX = ;
- 
+
+
+
+
+boolean grounded = true;
+
+
+
 void setup(){
   size(1000, 730);
   bg = loadImage("./images/bggd.png");
@@ -16,7 +23,7 @@ void setup(){
   coins = loadImage("./images/coin.png");
   coinArray = new Coin[10];
   for(int i=0;i<coinArray.length; i++){
-    coinArray[i]=new Coin(700,400);
+    coinArray[i]=new Coin(300, 700,400);
   }
   score=0;
   
@@ -31,15 +38,27 @@ void draw(){
   text("Score: " + score, 100, 50);
   for(Coin : coinArray){                                              //foreach loop (instead of a for loop) to go through each item in an array
     
-    //for(Coin b2: coinArray){                                            //check each ball against every other ball
+    for(Coin b2: coinArray){                                            //check each ball against every other ball
       
       if(b1!=b2){
-        b1.ballCollision(b2);
+b1.ballCollision(b2);
       }
       
     }
     
   }
+
+
+  if(keyPressed){
+    if(keyCode == UP){
+      y-=2; 
+    }
+  }
+  if(y <= 655){
+    grounded = false;
+    
+  }
+
 }
 
 void moveBG(){
@@ -75,3 +94,19 @@ void moveCoins(){
    coinArray[i].moveCoin(); 
   }
 }
+
+
+void keyReleased(){
+  if(keyCode == UP){
+    while(!grounded){
+      y += 2;
+    }
+    
+  }
+      
+}
+   
+     
+    
+    
+  
