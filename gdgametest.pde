@@ -1,11 +1,22 @@
+
 float bgX;
 float bgY = -20;
 float shakeLoop;
+<<<<<<< HEAD
 PImage bg, coin, platform, deathscreen1, deathscreen2;
 int deathStart;
 int deathEnd;
 boolean timerOn = true;
 boolean timerFinished = false;
+=======
+PImage bg;
+PImage coins;
+public int score;
+Coin[] coinArray;
+//float topX = ;
+PImage bg, coin, platform;
+>>>>>>> 9198ae3239d1cf66d73e20fa6312212f950a24b4
+
 
 Platform[] pfArray;
 Spike[] sArray;
@@ -25,10 +36,24 @@ void setup(){
   deathscreen1 = loadImage("./images/deathscreen1.png");  
   deathscreen2 = loadImage("./images/deathscreen2.png"); 
   smooth();
+  coins = loadImage("./images/coin.png");
+  coinArray = new Coin[10];
+  score=0;
+  
+  for(int i=0;i<coinArray.length; i++){
+    coinArray[i]=new Coin(width+i*300);
+  }
+    
+  pfArray = new Platform[10];
+  for(int i = 0; i < pfArray.length; i++){
+    pfArray[i] = new Platform(width+i*300);
+  }
+
   pfArray = new Platform[100];
   for(int i = 0; i < pfArray.length; i++){
     pfArray[i] = new Platform(width+i*300);
   }
+<<<<<<< HEAD
   sArray = new Spike[500];
   for(int i = 0; i < sArray.length; i++){
     sArray[i] = new Spike(width +i*50, bgY + 675);
@@ -67,6 +92,19 @@ void draw(){
   
 
 }
+=======
+
+}
+
+void draw(){
+
+  moveBG();
+  moveCoins(); 
+  textSize(32);
+  text("Score: " + score, 100, 50);
+  p.update();
+  movePfs();
+>>>>>>> 9198ae3239d1cf66d73e20fa6312212f950a24b4
 
 void mouseClicked(){
   if(timerFinished){
@@ -82,7 +120,6 @@ void mouseClicked(){
 void movePfs(){
   for(int i = 0; i < pfArray.length; i++){
     pfArray[i].movePf(p);
-    
   }
   
 }
@@ -126,6 +163,12 @@ void moveBG(){
   }
 }
 
+void moveCoins(){
+
+  for(int i=0; i<coinArray.length;i++){
+   coinArray[i].moveCoin(p); 
+  }
+}
 
 /*void keyReleased(){
   if(keyCode == UP){

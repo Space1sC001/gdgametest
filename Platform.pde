@@ -27,6 +27,7 @@ class Platform{
       p.v = 20;
       //println("hi");
       
+      
     
     
     
@@ -36,14 +37,7 @@ class Platform{
         p.platformed = false; 
         pfed = false;
       }
-    }
-      
+    }   
   }
-  
-  
-  
-  
-  
-  
-  
+
 }
