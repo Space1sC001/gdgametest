@@ -1,13 +1,12 @@
 
-
 float bgX;
 float bgY = -20;
 float shakeLoop;
+PImage bg;
 PImage coins;
 public int score;
 Coin[] coinArray;
 //float topX = ;
-
 PImage bg, coin, platform;
 
 
@@ -28,24 +27,30 @@ void setup(){
   smooth();
   coins = loadImage("./images/coin.png");
   coinArray = new Coin[10];
+  score=0;
+  
   for(int i=0;i<coinArray.length; i++){
     coinArray[i]=new Coin(width+i*300);
   }
-  score=0;
-  
-  
+    
   pfArray = new Platform[10];
   for(int i = 0; i < pfArray.length; i++){
     pfArray[i] = new Platform(width+i*300);
   }
+
+  pfArray = new Platform[100];
+  for(int i = 0; i < pfArray.length; i++){
+    pfArray[i] = new Platform(width+i*300);
+  }
+
 }
 
 void draw(){
+
   moveBG();
   moveCoins(); 
   textSize(32);
   text("Score: " + score, 100, 50);
-
   p.update();
   movePfs();
 
@@ -54,8 +59,6 @@ void draw(){
 void movePfs(){
   for(int i = 0; i < pfArray.length; i++){
     pfArray[i].movePf(p);
-    
-    
   }
   
   
