@@ -6,6 +6,7 @@ class Player{
   float y = 660;
   float g = 1;
   boolean platformed = false;
+  boolean alive = true;
   
   void update(){
     rect(this.x, this.y, 20, 20);
