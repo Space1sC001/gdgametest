@@ -38,7 +38,7 @@ class Player{
       
       
     }
-    
+    println(this.y + this.x);
   }
   
   
