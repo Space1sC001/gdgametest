@@ -9,13 +9,7 @@ class Spike{
 
     sX = x;
     sY = y;
-    
-    
-    
-    
-    
-    
-    
+
   }
   
   void moveSpike(Player p){
