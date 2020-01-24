@@ -19,6 +19,9 @@ class Spike{
       p.alive = false;
      
     }
+    if(this.sX<=-100){
+      sX=1100;
+    }
   }
   
   

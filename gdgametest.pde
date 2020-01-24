@@ -21,26 +21,20 @@ void setup(){
   deathscreen1 = loadImage("./images/deathscreen1.png");  
   deathscreen2 = loadImage("./images/deathscreen2.png"); 
   coins = loadImage("./images/coin.png");
-<<<<<<< HEAD
-  coinArray = new Coin[100];
-=======
   smooth();
-  
-
->>>>>>> 717b8f6e77d11aac2fefd4953a14a1cfbcca081a
   score=0;
   
-  coinArray = new Coin[10];
+  coinArray = new Coin[100];
   for(int i=0;i<coinArray.length; i++){
     coinArray[i]=new Coin(width+i*300);
   }
     
-  pfArray = new Platform[100];
+  pfArray = new Platform[4];
   for(int i = 0; i < pfArray.length; i++){
     pfArray[i] = new Platform(width+i*300);
   }
   
-  sArray = new Spike[50];
+  sArray = new Spike[25];
   for(int i = 0; i < sArray.length; i++){
     sArray[i] = new Spike(width +i*50, bgY + 675);
   }

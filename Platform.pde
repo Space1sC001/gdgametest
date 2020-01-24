@@ -37,6 +37,9 @@ class Platform{
         p.platformed = false; 
         pfed = false;
       }
+     if(this.pX<=-100){
+      pX=1100;
+     }
     }   
   }
 
