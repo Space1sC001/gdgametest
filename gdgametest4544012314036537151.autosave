@@ -1,14 +1,3 @@
-/*
-Note for player:
-- The restarting of game function is slow. It takes about 10 seconds and is kind of broken. To restart, close the window and reopen it. 
-Controls: 
-- Up is jump
-Goal:
-- Collect as many coins as you can. They are yellow and shiny and cool and slippery. If you do not collect them when you jump into them, it's because you suck at grabbing coins since you don't have arms...
-- The spikes are dangerous. The red of the spikes is just tomato sauce. The black of the spikes is an unknown substance.
-- The platforms are safe. They are green and brown. They have levitation powers because they are just that cool.
-- You are a little square. You are boring. You can jump. You can (sometimes) grab coins. You can die. You can also bug out. You are annoying
-*/
 
 float bgX;
 float bgY = -20;
@@ -20,6 +9,8 @@ boolean timerOn = true;
 boolean timerFinished = false;
 public int score;
 Coin[] coinArray;
+//float topX = ;
+
 
 
 Platform[] pfArray;
@@ -33,19 +24,26 @@ void setup(){
   deathscreen2 = loadImage("./images/deathscreen2.png"); 
   coins = loadImage("./images/coin.png");
   smooth();
+  
+
   score=0;
   
-  coinArray = new Coin[100];
+  coinArray = new Coin[10];
   for(int i=0;i<coinArray.length; i++){
     coinArray[i]=new Coin(width+i*300);
   }
-    
-  pfArray = new Platform[4];
+  
+  pfArray = new Platform[2];
   for(int i = 0; i < pfArray.length; i++){
-    pfArray[i] = new Platform(width+i*275);
+    pfArray[i] = new Platform(width+i*300);
+  }
+    
+  pfArray = new Platform[2];
+  for(int i = 0; i < pfArray.length; i++){
+    pfArray[i] = new Platform(width+i*300);
   }
   
-  sArray = new Spike[25];
+  sArray = new Spike[50];
   for(int i = 0; i < sArray.length; i++){
     sArray[i] = new Spike(width +i*50, bgY + 675);
   }
