@@ -32,18 +32,13 @@ void setup(){
   deathscreen2 = loadImage("./images/deathscreen2.png"); 
   smooth();
   coins = loadImage("./images/coin.png");
-  coinArray = new Coin[10];
+  coinArray = new Coin[100];
   score=0;
   
   for(int i=0;i<coinArray.length; i++){
     coinArray[i]=new Coin(width+i*300);
   }
     
-  pfArray = new Platform[10];
-  for(int i = 0; i < pfArray.length; i++){
-    pfArray[i] = new Platform(width+i*300);
-  }
-
   pfArray = new Platform[100];
   for(int i = 0; i < pfArray.length; i++){
     pfArray[i] = new Platform(width+i*300);
