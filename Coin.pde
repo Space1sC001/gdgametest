@@ -10,7 +10,7 @@ class Coin{
     coin=loadImage("./images/coin.png");
     coinHit=false;
     X=x;
-    Y=random(500,550);
+    Y=random(520, 580);
     
     
   } 
