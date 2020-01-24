@@ -1,46 +1,28 @@
-
 float bgX;
 float bgY = -20;
 float shakeLoop;
-PImage bg, coins, platform, deathscreen1, deathscreen2;
+PImage bg, coin, platform, deathscreen1, deathscreen2;
 int deathStart;
 int deathEnd;
 boolean timerOn = true;
 boolean timerFinished = false;
-public int score;
-Coin[] coinArray;
-
 
 Platform[] pfArray;
 Spike[] sArray;
 Player p = new Player();
+
 
 void setup(){
   size(1000, 730);
   bg = loadImage("./images/bggd.png");
   deathscreen1 = loadImage("./images/deathscreen1.png");  
   deathscreen2 = loadImage("./images/deathscreen2.png"); 
-  coins = loadImage("./images/coin.png");
-<<<<<<< HEAD
-  coinArray = new Coin[100];
-=======
   smooth();
-  
-
->>>>>>> 717b8f6e77d11aac2fefd4953a14a1cfbcca081a
-  score=0;
-  
-  coinArray = new Coin[10];
-  for(int i=0;i<coinArray.length; i++){
-    coinArray[i]=new Coin(width+i*300);
-  }
-    
   pfArray = new Platform[100];
   for(int i = 0; i < pfArray.length; i++){
     pfArray[i] = new Platform(width+i*300);
   }
-  
-  sArray = new Spike[50];
+  sArray = new Spike[500];
   for(int i = 0; i < sArray.length; i++){
     sArray[i] = new Spike(width +i*50, bgY + 675);
   }
@@ -52,23 +34,20 @@ void draw(){
     p.update();
     movePfs();
     moveSpikes();
-    moveCoins(); 
-    textSize(32);
-    text("Score: " + score, 100, 50);
     
   }
   else if(p.alive == false){
     if(!timerFinished){
       if(timerOn){
-        deathEnd = second() + 2;
+        deathEnd = second() + 5;
         if(deathEnd >= 60){
-          deathEnd = 2;
+          deathEnd = 5;
         }
         timerOn = false;
       }
       image(deathscreen1, 300, 300, 400, 150);
       deathStart = second();
-      if(deathStart >= 58){
+      if(deathStart >= 55){
         deathStart = 0;
       }
       if(deathStart == deathEnd){
@@ -81,7 +60,6 @@ void draw(){
   
 
 }
-
 
 void mouseClicked(){
   if(timerFinished){
@@ -97,6 +75,7 @@ void mouseClicked(){
 void movePfs(){
   for(int i = 0; i < pfArray.length; i++){
     pfArray[i].movePf(p);
+    
   }
   
 }
@@ -140,12 +119,6 @@ void moveBG(){
   }
 }
 
-void moveCoins(){
-
-  for(int i=0; i<coinArray.length;i++){
-   coinArray[i].moveCoin(p); 
-  }
-}
 
 /*void keyReleased(){
   if(keyCode == UP){
