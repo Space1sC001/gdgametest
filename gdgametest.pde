@@ -1,3 +1,14 @@
+/*
+Note for player:
+- The restarting of game function is slow. It takes about 10 seconds and is kind of broken. To restart, close the window and reopen it. 
+Controls: 
+- Up is jump
+Goal:
+- Collect as many coins as you can. They are yellow and shiny and cool and slippery. If you do not collect them when you jump into them, it's because you suck at grabbing coins since you don't have arms...
+- The spikes are dangerous. The red of the spikes is just tomato sauce. The black of the spikes is an unknown substance.
+- The platforms are safe. They are green and brown. They have levitation powers because they are just that cool.
+- You are a little square. You are boring. You can jump. You can (sometimes) grab coins. You can die. You can also bug out. You are annoying
+*/
 
 float bgX;
 float bgY = -20;
