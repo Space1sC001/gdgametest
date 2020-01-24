@@ -9,8 +9,6 @@ boolean timerOn = true;
 boolean timerFinished = false;
 public int score;
 Coin[] coinArray;
-//float topX = ;
-
 
 
 Platform[] pfArray;
@@ -34,6 +32,11 @@ void setup(){
   }
     
   pfArray = new Platform[10];
+  for(int i = 0; i < pfArray.length; i++){
+    pfArray[i] = new Platform(width+i*300);
+  }
+
+  pfArray = new Platform[100];
   for(int i = 0; i < pfArray.length; i++){
     pfArray[i] = new Platform(width+i*300);
   }
